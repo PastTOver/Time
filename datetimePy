@@ -1,0 +1,36 @@
+import datetime
+import time
+
+
+dt = datetime.datetime(2020, 8, 30, 12, 2, 34, 8888)
+print(dt, type(dt))
+dt = datetime.datetime.today()
+print(dt, type(dt))
+dt = datetime.datetime.now()
+print(dt, type(dt))
+
+dt = datetime.datetime.utcnow()
+print(dt, type(dt))
+
+
+# 时间戳 -》 datetime
+dt = datetime.datetime.fromtimestamp(time.time())
+print(dt, type(dt))
+# 字符串 -》 datetime
+dt = datetime.datetime.strptime("2021-01-01 08:59:00", "%Y-%m-%d %H:%M:%S")
+print(dt, type(dt))
+# 结构化对象 -》 datetime
+print(datetime.datetime.fromtimestamp(time.mktime(time.localtime())))
+# date+time -> datetime
+dt = datetime.datetime.combine(datetime.date(2021, 12, 11), datetime.time(15, 10, 45, 8888))
+print(dt, type(dt))
+
+# 属性
+print(dt.year)
+print(dt.month)
+print(dt.day)
+print(dt.hour)
+print(dt.minute)
+print(dt.second)
+print(dt.microsecond)
+
